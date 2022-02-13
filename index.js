@@ -2,12 +2,18 @@ const axios = require("axios")
 const express = require("express")
 const cors = require("cors")
 const app = express()
+const path = require("path")
 require("dotenv").config()
 
 app.use(cors())
+app.use(express.static(path.join(__dirname, "public")))
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server running on PORT ${PORT}`)
+  console.log(`Server running on PORT 3000`)
+})
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"))
 })
 
 app.get("/word", (req, res) => {

@@ -14,7 +14,7 @@ const noBtn = document.getElementById("noBtn")
 let wordle
 
 const getWordle = () => {
-  fetch("http://localhost:8000/word")
+  fetch("http://localhost:3000/word")
     .then((response) => response.json())
     .then((json) => {
       wordle = json.toUpperCase()
@@ -97,7 +97,6 @@ noBtn.onclick = function () {
 }
 
 yesBtn.addEventListener("click", () => {
-  console.log("CLICKED")
   modal.style.display = "none"
   newGame()
 })
@@ -121,7 +120,6 @@ const handleKeyPress = (key) => {
   if (!isGameOver) {
     if (key === "BACKSPACE") {
       removeLetter()
-      console.log(guessRows)
       return
     }
     if (key === "ENTER") {
@@ -209,7 +207,7 @@ const removeLetter = () => {
 const checkRow = () => {
   const guess = guessRows[currentRow].join("")
   if (currentTile > 4) {
-    fetch(`http://localhost:8000/check/?word=${guess}`)
+    fetch(`http://localhost:3000/check/?word=${guess}`)
       .then((res) => res.json())
       .then((json) => {
         if (json.title == "No Definitions Found") {
