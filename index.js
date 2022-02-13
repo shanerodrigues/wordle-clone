@@ -32,7 +32,7 @@ app.get("/word", (req, res) => {
     .then((response) => {
       let num = Math.floor(Math.random() * 3)
       // res.send(res.text(response.data[num]))
-      res.text(response.data[num])
+      res.send(response.data[num])
     })
     .catch((error) => {
       console.error(error)
@@ -43,8 +43,6 @@ app.get("/check", (req, res, next) => {
   const { word } = req.query
   axios
     .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    // .then((response) => res.send(response.data[0]))
-    // .catch((err) => res.send(err.response.data))
-    .then((response) => res.text(response.data[0]))
-    .catch((err) => res.text(err.response.data))
+    .then((response) => res.send(response.data[0]))
+    .catch((err) => res.send(err.response.data))
 })
