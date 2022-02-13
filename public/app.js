@@ -12,9 +12,10 @@ const span = document.getElementsByClassName("close")[0]
 const noBtn = document.getElementById("noBtn")
 
 let wordle
+// fetch("http://localhost:3000/word")
 
 const getWordle = () => {
-  fetch("http://localhost:3000/word")
+  fetch("/word")
     .then((response) => response.json())
     .then((json) => {
       wordle = json.toUpperCase()
@@ -207,7 +208,8 @@ const removeLetter = () => {
 const checkRow = () => {
   const guess = guessRows[currentRow].join("")
   if (currentTile > 4) {
-    fetch(`http://localhost:3000/check/?word=${guess}`)
+    // fetch(`http://localhost:3000/check/?word=${guess}`)
+    fetch(`/check/?word=${guess}`)
       .then((res) => res.json())
       .then((json) => {
         if (json.title == "No Definitions Found") {

@@ -31,7 +31,7 @@ app.get("/word", (req, res) => {
     .request(options)
     .then((response) => {
       let num = Math.floor(Math.random() * 3)
-      res.json(response.data[num])
+      res.send(response.data[num])
     })
     .catch((error) => {
       console.error(error)
