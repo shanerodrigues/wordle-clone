@@ -78,6 +78,7 @@ body {
 }
 
 .message-container {
+  z-index: 3;
   height: 30px;
 }
 
@@ -178,8 +179,7 @@ body {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 20%;
-  height: 25%;
+  width: 300px;
   text-align: center;
 }
 
