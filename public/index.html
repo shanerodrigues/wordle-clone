@@ -10,31 +10,32 @@
   <body>
     <div class="game-container">
       <div class="title-container">
-        <h1 style="
-        margin-top: 10px;
-        margin-bottom: 10px;">Wordle</h1>
+        <h1 style="margin-top: 10px; margin-bottom: 10px">Wordle</h1>
       </div>
-      
+
       <div class="message-container"></div>
       <div class="tile-container"></div>
 
       <div class="key-container"></div>
       <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <h2>Game Over</h2>
-          <p>The word was: <p id="word-to-guess"></p></p>
-          <p>Play Again?</p>
-          <div id="btnDiv">
-            <a class="modal-button" id="yesBtn">YES</a>
-            <a class="modal-button" id="noBtn">NO</a>
+          <div class="items">
+            <h2>Game Over</h2>
+            <span
+              >The word was:
+              <p id="word-to-guess"></p
+            ></span>
+            <p style="margin: 5px 0px">Play Again?</p>
+            <div id="btnDiv">
+              <a class="modal-button" id="yesBtn">YES</a>
+              <a class="modal-button" id="noBtn">NO</a>
+            </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
     <script src="app.js"></script>
-    
   </body>
 </html>

@@ -208,7 +208,9 @@ body {
 }
 
 #btnDiv {
-  margin-top: 30px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 /* .close:hover,
