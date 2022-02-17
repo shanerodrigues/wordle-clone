@@ -12,9 +12,9 @@ const span = document.getElementsByClassName("close")[0]
 const noBtn = document.getElementById("noBtn")
 
 let wordle
-// fetch("http://localhost:3000/word")
 
 const getWordle = () => {
+  // fetch("http://localhost:3000/word")
   fetch("/word")
     .then((response) => response.json())
     .then((json) => {
@@ -186,6 +186,7 @@ const addLetter = (letter) => {
     const tile = document.getElementById(
       `guessRow-${currentRow}-tile-${currentTile}`
     )
+    tile.classList.toggle("highlight-tile")
     tile.textContent = letter
     guessRows[currentRow][currentTile] = letter
     tile.setAttribute("data", letter)
@@ -199,6 +200,7 @@ const removeLetter = () => {
     const previousTile = document.getElementById(
       `guessRow-${currentRow}-tile-${currentTile}`
     )
+    previousTile.classList.toggle("highlight-tile")
     previousTile.textContent = ""
     guessRows[currentRow][currentTile] = ""
     previousTile.setAttribute("data", "")

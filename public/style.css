@@ -68,6 +68,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 2px;
+  font-size: 30px;
 }
 
 .row {
@@ -214,9 +215,6 @@ body {
   justify-content: center;
 }
 
-/* .close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-} */
+.highlight-tile {
+  border: 2px solid #afafb2 !important;
+}
