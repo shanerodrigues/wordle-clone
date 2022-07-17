@@ -43,7 +43,8 @@ app.get("/word", (req, res) => {
 app.get("/check", (req, res, next) => {
   const { word } = req.query
   axios
-    .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    .get(`https://api.freedictionary.dev/api/v1/entries/en/${word}`)
     .then((response) => res.send(response.data[0]))
     .catch((err) => res.send(err.response.data))
 })
+
